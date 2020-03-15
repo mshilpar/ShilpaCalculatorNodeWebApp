@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+
+  </head>
+  <body>
+    <div class="container">
+     <fieldset>
+        <form action="/" method="post">
+          <input name="number1" type="text" class="ghost-input" placeholder="Number1" required>
+          <input name="number2" type="text" class="ghost-input" placeholder="Number2" required>
+
+        <select class="select-value" (ngModelChange)="changeValue($event)" data-style="btn-info" name="operation">
+                  <optgroup label="Select Operation">
+                  <option name="operation1" value="add">Add</option>
+                  <option name="operation2" value="subtract">Subtract</option>
+                  <option name="operation3" value="multiply">Multiply</option>
+                  <option name="operation4" value="divide">Divide</option>
+                </optgroup>
+            </select><br><br>
+           <input type="submit" class="ghost-button" value="Calculate">
+           </form>
+
+        <% if(output !== null){ %>
+          <p><%= output %></p>
+        <% } %>
+
+        <% if(error !== null){ %>
+          <p><%= error %></p>
+        <% } %>
+      </fieldset>
+    </div>
+  </body>
+</html>
